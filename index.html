@@ -1,8 +1,12 @@
-<html>
+<html ng-app>
 <head>
-<title>Hello!</title>
+ <title>Hello, Umsida</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js">
 </head>
-<body>
-Hello World!
+<body ng-init="name='umsida'">
+ <label>Name</label>
+ <input ng-model="name" />
+ <span>Hello, {{ name }}!</span>
+ <p ng-bind="name"></p>
 </body>
 </html>
