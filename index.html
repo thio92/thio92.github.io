@@ -4,9 +4,15 @@
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 <body ng-init="name='umsida'">
- <label>Name</label>
- <input ng-model="name" />
- <span>Hello, {{ name }}!</span>
- <p ng-bind="name"></p>
+<script>
+var myapp = angular.modula('myApp', []);
+
+myapp.controller('mycontroller', function($scope, $http){
+    $http.get('Cars.json')
+    .success(function(response){
+        $scope.data = response.records;
+    })
+})
+</script>
 </body>
 </html>
